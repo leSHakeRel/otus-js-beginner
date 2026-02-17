@@ -21,7 +21,9 @@ export function isWord(str) {
 console.log(isWord('test phrase'));
 
 export function pow(a, x) {
-    if(typeof a === 'number' && typeof x === 'number') {
+    if(typeof a === 'number' && typeof x === 'number' &&
+        !isNaN(a) && !isNaN(x)
+     ) {
         return Math.pow(a, x);
     } else {
         return null;
