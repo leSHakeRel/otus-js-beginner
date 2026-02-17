@@ -9,8 +9,11 @@ describe("check month name", () => {
 describe("check Circle In Square", () => {
   it("is function", () => expect(typeof checkCircleInSquare).toBe("function"));
 
-  it("is valid check result", () => expect(checkCircleInSquare(50, 100)).toBe(true));
-
-  it("is valid check result", () => expect(checkCircleInSquare(78, 78)).toBe(false));
-  it("is invalid check result", () => expect(checkCircleInSquare(undefined, undefined)).toBe(false));
+  [
+    ['is valid check result', 50, 100, true],
+    ['is valid check result', 78, 78, false],
+    ['is valid check result for undefined values', undefined, undefined, false],
+  ].forEach(([testName, first, second, result]) => {
+    it(testName, () => expect(checkCircleInSquare(first, second)).toBe(result))
+  })
 });
