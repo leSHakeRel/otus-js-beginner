@@ -2,7 +2,7 @@ export function isRightTriangle(a, b, c) {
     if(a && b && c) {
         const sides = [a, b, c].sort((x, y) => x - y);
         
-        return Math.abs(Math.pow(sides[0], 2) + Math.pow(sides[1], 2) === Math.pow(sides[2], 2));
+        return Math.pow(sides[0], 2) + Math.pow(sides[1], 2) === Math.pow(sides[2], 2);
     } else {
         return false;
     }
@@ -10,7 +10,7 @@ export function isRightTriangle(a, b, c) {
 
 export function getCircumference (radius) {
     if(typeof radius === 'number')
-        return 2 * PI * radius;
+        return 2 * Math.PI * radius;
 
     return 0;
 }
