@@ -1,9 +1,25 @@
+const maxParagraphCount = 5;
+
+export function checkParagraphs(){
+    const mainContainer = document.querySelector('.container');
+    const paragraphContainer = mainContainer.querySelector('.paragraphs');
+    return paragraphContainer.querySelectorAll('p');
+}
+
+export function clearInput(){
+    const tField = document.querySelector('input');
+    tField.value = '';
+    tField.focus();
+}
+
 export function addParagraph(textValue) {
     if(typeof textValue !== 'string')
         return;
     if(textValue.length > 0) {
         const newParagraph = document.createElement('p');
         newParagraph.innerText = textValue;
+        const mainContainer = document.querySelector('.container');
+        const paragraphContainer = mainContainer.querySelector('.paragraphs');
         paragraphContainer.appendChild(newParagraph);
         const paragraps = Array.from(checkParagraphs());
         if (paragraps.length >= maxParagraphCount){
@@ -15,32 +31,18 @@ export function addParagraph(textValue) {
     }
 }
 
-export function checkParagraphs() {
-    return paragraphContainer.querySelectorAll('p');
-}
-
-export function clearInput() {
-    const tField = document.querySelector('input');
-    tField.value = '';
-    tField.focus();
-}
-
 document.addEventListener('DOMContentLoaded', ()=>{
-    const maxParagraphCount = 5;
-    const mainContainer = document.querySelector('.container');
-    const paragraphContainer = mainContainer.querySelector('.paragraphs');
-
     const input = document.querySelector('input');
     input.addEventListener('input', (event)=>{
-        let isDisabled = true;
+        let isHidden = true;
         if(event !== undefined &&
             event.target !== undefined &&
             typeof event.target.value === 'string'){
             if(event.target.value.length > 0)
-                isDisabled = false;
+                isHidden = false;
         }
-        const button = document.querySelector('button');    
-        button.disabled = isDisabled;
+        const button = document.querySelector('button');
+        button.style.visibility = isHidden ? "hidden" : "visible";
     });
     
     const button = document.querySelector('button');
