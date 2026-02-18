@@ -1,6 +1,6 @@
 export function getDateFromString(dateString){
     const [day, month, year] = dateString.split('.');
-    if(a && b && c)
+    if(day && month && year)
         return new Date(`${year}-${month}-${day}`);
     return undefined;
 }
