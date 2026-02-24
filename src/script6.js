@@ -1,19 +1,23 @@
 export function diff(first, second) {
-    if(first === second)
+    if(first === second) {
         return 0;
-    if(isNaN(first) || isNaN(second))
+    }
+    if(isNaN(first) || isNaN(second)) {
         return 0;
+    }
     if((first === undefined || second === undefined) ||
-     (typeof first === 'string' || typeof second === 'string'))
+     (typeof first === 'string' || typeof second === 'string')) {
         return 0;
+    }
     return first > second ? first - second : second - first;
 }
 
 console.log(diff(5,6));
 
 export function isWord(str) {
-    if(typeof str !== 'string')
+    if(typeof str !== 'string') {
         return false;
+    }
 
     return str.split(' ').length > 1;
 }
