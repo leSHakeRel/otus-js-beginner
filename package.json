@@ -10,11 +10,11 @@
     "start": "webpack serve --open"
   },
   "lint-staged": {
-    "./src/*.{js}": [
+    "./src/*.js": [
       "eslint --fix",
       "prettier --write"
     ],
-    ".github/**/*.{yml}": [
+    ".github/**/*.yml": [
       "prettier --write"
     ]
   },
