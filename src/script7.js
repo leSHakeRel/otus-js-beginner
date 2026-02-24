@@ -1,6 +1,6 @@
 const maxParagraphCount = 5;
 
-export function runApp(element) {
+function runApp(element) {
 
     element.innerHTML = `<div class="paragraphs">
             <p></p>
@@ -61,3 +61,5 @@ export function runApp(element) {
     clearInput();
   });
 }
+
+module.exports = { runApp };

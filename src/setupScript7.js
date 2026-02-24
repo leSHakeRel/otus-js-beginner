@@ -1,3 +1,3 @@
-import { runApp } from "./script7";
+const { runApp } = require("./script7");
 
 runApp(document.body);
