@@ -26,11 +26,11 @@ const  a = 3, b = 4, c = 5;
 
 console.log(`is right triangle: ${isRightTriangle(a, b, c)}`);
 
-const strR = prompt('Enter circle radius');
+const strRadius = prompt('Enter circle radius');
 
-const R = parseInt(strR);
-if(R){
-    console.log(`circumference = ${getCircumference(R)}a\ncircle area = ${getCircleArea(R)}`);
+const userRadius = parseInt(strRadius);
+if(userRadius){
+    console.log(`circumference = ${getCircumference(userRadius)}a\ncircle area = ${getCircleArea(userRadius)}`);
 } else {
     console.log(`WRONG TYPE OF RADIUS`);
 }
